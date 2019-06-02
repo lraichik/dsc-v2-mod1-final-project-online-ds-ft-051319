@@ -4,9 +4,9 @@
 Please fill out:
 * Student name: Levi Raichik 
 * Student pace: full time
-* Scheduled project review date/time: 
-* Instructor name: 
-* Blog post URL:
+* Scheduled project review date/time: June 4, 2 PM
+* Instructor name: Rafael Carrasco
+* Blog post URL: https://medium.com/@lraichik/analyzing-king-county-seattle-housing-data-ba3132a76933?source=friends_link&sk=b1d7d504debc8c3d2cd6b3ead1c5950d
 
 
 # Table of contents
@@ -44,7 +44,7 @@ Please fill out:
 
 # Introduction
 
-In this notebook, I will try to analyze the data from Kings county, Seattle to see what is driving the housing prices there.  
+In this notebook, I will try to analyze the data from King county, Seattle to see what is driving the housing prices there.  
 I will try to build a model that can predict what those prices will be in the future based on the the data points that affected those sales in 2014 and 2015.
 
 [Back to Table of Contents](#Table-of-contents)
@@ -80,7 +80,7 @@ data = pd.read_csv('kc_house_data.csv')
 
 
 ```python
-# Copied the column explaitions from the .md file and pasted it into a markdown cell
+# Copied the column explainations from the .md file and pasted it into a markdown cell
 ```
 
 # Column Names and descriptions for Kings County Data Set
@@ -7359,18 +7359,15 @@ Advice for buyer: If you want more then 2.75 bathrooms then expect to pay in the
 
 
 ```python
+plt.figure(figsize=(8,8))
 plt.scatter(rdata.sqft_living, rdata.price)
+plt.xlabel('sqft_living')
+plt.ylabel('price')
+plt.show()
 ```
 
 
-
-
-    <matplotlib.collections.PathCollection at 0x1e5ff96d438>
-
-
-
-
-![png](student_files/student_167_1.png)
+![png](student_files/student_167_0.png)
 
 
 
@@ -7589,7 +7586,11 @@ From our previous research it seems that most houses are under 1 million dollars
 
 
 ```python
-rdata.price.hist(bins=20);
+plt.figure(figsize=(10,10))
+rdata.price.hist(bins=20)
+plt.xlabel('Price')
+plt.ylabel('Frequency')
+plt.show()
 ```
 
 
